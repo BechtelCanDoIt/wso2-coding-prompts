@@ -5,7 +5,7 @@ A comprehensive collection of WSO2 engineering standards, coding guidelines, and
 ## Overview
 This project was created by Claude Opus by reviewing project code in WSO2 Agent Manager project for Go and WSO2 APIM for Java standards.
 
-This repository sits on top of this project: /Users/scottbechtel/dev/wso2/ai/codingprompts/wso2codingprompts 
+This repository sits on top of this project: https://github.com/BechtelCanDoIt/wso2-engineering-governance 
 
 This repository contains standardized coding prompts and engineering guidelines for WSO2 development. These guides establish a unified approach to code quality, security, and architecture across all WSO2 products and repositories.
 
@@ -216,7 +216,7 @@ Language-Specific Guide (Java, Go, Python, TypeScript)
          ↓
 Product/Platform Guide (WSO2 Enterprise or Agent Manager)
          ↓
-/Users/scottbechtel/dev/wso2/ai/codingprompts/wso2codingprompts
+https://github.com/BechtelCanDoIt/wso2-engineering-governance
          ↓
 Universal Engineering Standards (foundation)
 ```
