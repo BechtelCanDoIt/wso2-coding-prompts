@@ -228,6 +228,41 @@ For example:
 
 ---
 
+## Use as a Claude Code Skill
+
+This repo is also a Claude Code skill. `SKILL.md` at the repo root tells Claude to read `wso2-universal.md` first, then the one language overlay that matches the code (and the `amp/` files for Agent Manager work).
+
+Install it by cloning into your skills folder:
+
+```bash
+git clone https://github.com/BechtelCanDoIt/wso2-coding-prompts ~/.claude/skills/wso2-coding-standards
+```
+
+Skills load when Claude judges a request matches their description, which everyday coding requests often do not. To make it harder to miss, add the optional session-start hook. It prints a one-line reminder, only inside a code project (a git repo, or a folder with `pom.xml`, `go.mod`, `pyproject.toml`, `package.json` or `requirements.txt`). It needs `jq`.
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/skills/wso2-coding-standards/hooks/coding-standards-nudge.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Put that under `hooks` in `~/.claude/settings.json`. The reminder is a nudge, so Claude still decides whether to load the skill.
+
+---
+
 ## Key Standards Across All Guides
 
 ### Security
